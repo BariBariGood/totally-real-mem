@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "mcp:sync": "uv --directory mcp sync",
+    "mcp:run": "uv --directory mcp run server.py",
+    "mcp:inspect": "npx @modelcontextprotocol/inspector uv --directory mcp run server.py"
   },
   "dependencies": {
     "express": "^5.1.0"
