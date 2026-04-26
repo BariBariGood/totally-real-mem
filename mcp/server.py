@@ -12,11 +12,15 @@ stdio, which is what FastMCP's default ``run()`` uses.
 from __future__ import annotations
 
 import os
+from pathlib import Path
 from typing import Any
 
 import httpx
+from dotenv import load_dotenv
 from engram_mcp_sdk import engram
 from fastmcp import FastMCP
+
+load_dotenv(Path(__file__).resolve().parent / ".env")
 
 CALCCO_API_URL = os.environ.get("CALCCO_API_URL", "http://localhost:3000").rstrip("/")
 HTTP_TIMEOUT_SECONDS = float(os.environ.get("CALCCO_HTTP_TIMEOUT_SECONDS", "20"))
